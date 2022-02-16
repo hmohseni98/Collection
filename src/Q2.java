@@ -11,7 +11,7 @@ public class Q2 {
         System.out.println("tree set 1: " + treeSet1);
         System.out.println("tree set 2: " + treeSet2);
         System.out.println("union is: " + union(treeSet1, treeSet2));
-        System.out.println("sub scribe is: " + subScribe(treeSet1,treeSet2));
+        System.out.println("subscribe is: " + subScribe(treeSet1,treeSet2));
     }
 
     private static Set<Character> fillSet(Set<Character> set) {
@@ -39,15 +39,10 @@ public class Q2 {
         int counter = 0;
         Set<Character> union = new TreeSet<>();
         for (Character c : set1) {
-            for (Character a : set2) {
-                if (c.equals(a)) {
-                    counter++;
-                    break;
-                }
-            }
-            if (counter == 0)
-                union.add(c);
-            counter = 0;
+            union.add(c);
+        }
+        for (Character a : set2) {
+            union.add(a);
         }
         return union;
     }
